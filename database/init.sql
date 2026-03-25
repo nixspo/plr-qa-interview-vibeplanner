@@ -8,22 +8,15 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 CREATE TABLE IF NOT EXISTS tours (
-    id          SERIAL PRIMARY KEY,
-    user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    title       VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL DEFAULT '',
-    created_at  TIMESTAMP DEFAULT NOW(),
-    updated_at  TIMESTAMP DEFAULT NOW()
-);
-
-CREATE TABLE IF NOT EXISTS tour_waypoints (
-    id          SERIAL PRIMARY KEY,
-    tour_id     INTEGER NOT NULL REFERENCES tours(id) ON DELETE CASCADE,
-    title       VARCHAR(255) NOT NULL DEFAULT '',
-    description TEXT NOT NULL DEFAULT '',
-    lat         DOUBLE PRECISION NOT NULL,
-    lng         DOUBLE PRECISION NOT NULL,
-    position    INTEGER NOT NULL DEFAULT 0
+    id           SERIAL PRIMARY KEY,
+    tour_number  INTEGER NOT NULL UNIQUE CHECK (tour_number BETWEEN 1000 AND 9999),
+    max_volume   DOUBLE PRECISION NOT NULL,
+    max_weight   DOUBLE PRECISION NOT NULL,
+    range        DOUBLE PRECISION NOT NULL,
+    vehicle_type VARCHAR(64) NOT NULL,
+    area         JSONB,
+    created_at   TIMESTAMP DEFAULT NOW(),
+    updated_at   TIMESTAMP DEFAULT NOW()
 );
 
 INSERT INTO users (email, full_name, password_hash)
@@ -44,22 +37,15 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 CREATE TABLE IF NOT EXISTS tours (
-    id          SERIAL PRIMARY KEY,
-    user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    title       VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL DEFAULT '',
-    created_at  TIMESTAMP DEFAULT NOW(),
-    updated_at  TIMESTAMP DEFAULT NOW()
-);
-
-CREATE TABLE IF NOT EXISTS tour_waypoints (
-    id          SERIAL PRIMARY KEY,
-    tour_id     INTEGER NOT NULL REFERENCES tours(id) ON DELETE CASCADE,
-    title       VARCHAR(255) NOT NULL DEFAULT '',
-    description TEXT NOT NULL DEFAULT '',
-    lat         DOUBLE PRECISION NOT NULL,
-    lng         DOUBLE PRECISION NOT NULL,
-    position    INTEGER NOT NULL DEFAULT 0
+    id           SERIAL PRIMARY KEY,
+    tour_number  INTEGER NOT NULL UNIQUE CHECK (tour_number BETWEEN 1000 AND 9999),
+    max_volume   DOUBLE PRECISION NOT NULL,
+    max_weight   DOUBLE PRECISION NOT NULL,
+    range        DOUBLE PRECISION NOT NULL,
+    vehicle_type VARCHAR(64) NOT NULL,
+    area         JSONB,
+    created_at   TIMESTAMP DEFAULT NOW(),
+    updated_at   TIMESTAMP DEFAULT NOW()
 );
 
 INSERT INTO users (email, full_name, password_hash)
