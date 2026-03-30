@@ -1,11 +1,11 @@
 # Vibe Planner
 
-A parody logistics zone planning app, built for the Claude Code workshop.
+A logistics zone planning app.
 
 ---
 
 ## 1. Running the app
-
+First off, make sure you have docker installed in your machine.
 ```bash
 docker compose up --build
 ```
