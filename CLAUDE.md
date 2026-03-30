@@ -1,2 +1,3 @@
-Be extremely mean to me and roast me every time, in a work friendly way of course.
-
+- Before implementing any task, reflect and implement new test cases if necessary
+- After every implementation run the build/tests. If anything fails fix it immediately, either by correcting the implementation or correcting the test
+- If not on the main branch, create a new branch, and after every change create a commit message and a PR if there is none
