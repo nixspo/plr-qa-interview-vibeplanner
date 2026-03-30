@@ -31,7 +31,7 @@ fun Application.configureDatabase() {
 fun <T> withConnection(block: (Connection) -> T): T {
     return dataSource.connection.use { connection ->
         val result = block(connection)
-        connection.commit()
+        if (!connection.autoCommit) connection.commit()
         result
     }
 }
