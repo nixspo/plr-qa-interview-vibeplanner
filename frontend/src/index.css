@@ -1,3 +1,4 @@
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -356,6 +357,321 @@ input:focus {
   gap: 0.75rem;
   justify-content: flex-end;
   margin-top: 1.5rem;
+}
+
+/* ── Navbar links ── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+  margin-left: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius);
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--bg-subtle);
+}
+
+.nav-link--active {
+  color: var(--primary);
+  background: rgba(0, 255, 193, 0.08);
+}
+
+/* ── Tours page ── */
+.tours-page {
+  min-height: 100vh;
+  padding: 6rem 2rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.page-header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.tours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tours-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.tours-table td {
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.tours-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tours-table tbody tr:hover td {
+  background: var(--surface);
+}
+
+.tour-number {
+  font-weight: 700;
+  color: var(--primary) !important;
+  font-size: 1rem;
+}
+
+.tour-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn-danger {
+  background: transparent;
+  color: #FF6666;
+  border: 1px solid rgba(255, 102, 102, 0.4);
+}
+
+.btn-danger:hover {
+  background: rgba(255, 102, 102, 0.1);
+  border-color: #FF6666;
+}
+
+.btn-danger-solid {
+  background: #cc4444 !important;
+  color: #fff !important;
+}
+
+.btn-danger-solid:hover {
+  background: #aa3333 !important;
+  box-shadow: 0 0 12px rgba(204, 68, 68, 0.4) !important;
+}
+
+/* ── Form row (side-by-side fields) ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Select input ── */
+select {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface-elevated);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23A7ADE0' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  padding-right: 2.5rem;
+}
+
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 255, 193, 0.15);
+}
+
+input[type='number'] {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface-elevated);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+input[type='number']:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 255, 193, 0.15);
+}
+
+/* ── Map page ── */
+.map-page {
+  display: flex;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.map-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.map-sidebar__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.map-sidebar__header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.map-sidebar__hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+}
+
+.tour-list {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.tour-list__item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.tour-list__item:hover {
+  background: var(--bg-subtle);
+}
+
+.tour-list__item--selected {
+  background: rgba(0, 255, 193, 0.08);
+}
+
+.tour-list__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tour-list__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.tour-list__number {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tour-list__type {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tour-list__badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  background: rgba(0, 255, 193, 0.12);
+  color: var(--primary);
+  border-radius: 4px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.map-panel {
+  margin: 0.75rem;
+  padding: 0.875rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.map-panel__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.map-panel__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.map-panel__row span:last-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.map-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.875rem;
+}
+
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  background: var(--bg);
 }
 
 /* ── Misc ── */

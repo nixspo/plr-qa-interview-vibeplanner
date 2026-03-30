@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { VibeLogo } from './VibeLogo'
 
 function parseJwt(token: string): Record<string, string> {
@@ -49,6 +49,16 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <VibeLogo small />
+      {token && (
+        <div className="navbar-links">
+          <NavLink to="/tours" end className={({ isActive }) => isActive ? 'nav-link nav-link--active' : 'nav-link'}>
+            Tours
+          </NavLink>
+          <NavLink to="/tours/map" className={({ isActive }) => isActive ? 'nav-link nav-link--active' : 'nav-link'}>
+            Map
+          </NavLink>
+        </div>
+      )}
       {token ? (
         <div className="navbar-user" ref={menuRef}>
           <button
