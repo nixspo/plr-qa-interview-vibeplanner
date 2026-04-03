@@ -1,7 +1,7 @@
 # Vibe Planner — Regression Test Plan
 
-**Author:** Nikola 
-**Last Updated:** 2026-04-01  
+**Author:** Nikola
+**Last Updated:** 2026-04-03 
 **Environment:** `http://localhost:3000` (Docker)  
 **Credentials:** `test / V1b3Pl@nn3r!`
 
