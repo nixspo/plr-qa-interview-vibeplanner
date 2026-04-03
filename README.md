@@ -42,8 +42,8 @@ Nginx acts as the single entry point: static files are served directly, and anyt
 
 ## 2. Running tests
 
-# TEST PLAN
-To see Test Plan, check TEST_PLAN.md
+## TEST PLAN
+To see Test Plan, check `TEST_PLAN.md/`
 
 There are two independent test suites.
 
