@@ -28,7 +28,7 @@ Goal: To ensure that new features or fixes do not break existing logic or data s
 ## 3. Automation Strategy
 
 | Tool | Scope | 
-|------|-------|-----------|
+|------|-------|
 | **Playwright (E2E)** | Smoke tests and "Happy Path" regression for Tour Creation and Authentication. To develop further 
 | **Manual** | GExploratory testing for complex UI/UX map interactions and visual layout
 | **Postman** | API tests |
