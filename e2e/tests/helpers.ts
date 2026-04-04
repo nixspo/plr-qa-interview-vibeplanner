@@ -57,6 +57,7 @@ export const createTour = async (page: Page, { tourNumber, vehicle, volume, weig
   await page.getByRole('spinbutton', { name: 'Max Weight (kg)' }).fill(String(weight));
   await page.getByRole('spinbutton', { name: 'Range (km)' }).fill(String(range));
   await page.getByRole('button', { name: 'Save' }).click();
+  await expect(page.locator('.modal')).not.toBeVisible();
 }
 
 
