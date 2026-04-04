@@ -45,7 +45,7 @@ Nginx acts as the single entry point: static files are served directly, and anyt
 ## TEST PLAN
 To see Test Plan, check `TEST_PLAN.md/`
 
-There are two independent test suites.
+For test automation, there are two independent test suites.
 
 ### Backend — JUnit 5 + Testcontainers
 
