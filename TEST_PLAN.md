@@ -130,6 +130,7 @@ The following areas are consciously deprioritised for this assignment.
 
 | Area | Reason for exclusion |
 |------|----------------------|
+| Setting up test environment to separate data | This should be the first thing to do if moving forward with the task |
 | Cross-browser testing | Playwright defaults to Chromium; Safari/Firefox deferred |
 | Performance & load testing | Out of scope for regression suite |
 | Visual regression (screenshots) | Replaced by manual checks for map component — reduces flakiness |
@@ -139,6 +140,8 @@ The following areas are consciously deprioritised for this assignment.
 | Multi-user / concurrent sessions | Single-user app by design (one hardcoded test account) |
 | Modular Page Object Model (POM) for Playwright | Time limitation |
 | Direct database container tests with use of PostgreSQL | Time limitation | 
+| Running all tests as GitHub workflow | Time limitation | 
+
 
 ---
 
