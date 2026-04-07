@@ -32,8 +32,9 @@ graph LR
 | `frontend/` | React + TypeScript app, built by Vite, served by Nginx on port 3000 |
 | `backend/` | Kotlin + Ktor REST API on port 8080 |
 | `database/` | `init.sql` — creates tables and seeds the test user on first boot |
-| `e2e/` | Playwright end-to-end tests |
+| `e2e/tests/` | Playwright end-to-end tests |
 | `scripts/` | Helper scripts (e.g. `test-e2e.sh`) |
+| `postman/` | Postman API tests collection
 
 Nginx acts as the single entry point: static files are served directly, and anything under `/api/` is reverse-proxied to the backend (with the `/api` prefix stripped).
 
@@ -41,7 +42,10 @@ Nginx acts as the single entry point: static files are served directly, and anyt
 
 ## 2. Running tests
 
-There are two independent test suites.
+## TEST PLAN
+To see Test Plan, check `TEST_PLAN.md/`
+
+For test automation, there are two independent test suites.
 
 ### Backend — JUnit 5 + Testcontainers
 
@@ -70,3 +74,14 @@ Playwright tests run against the full Docker stack. The helper script brings eve
 ```
 
 The E2E suite uses a separate `vibeplanner_tests` database (via `docker-compose.test.yml`) so test runs never touch the development data.
+
+### API Tests (Postman)
+
+Import `postman/VibePlanner.postman_collection.json` and
+`postman/VibePlanner.postman_environment.json` into Postman.
+
+Or run via Newman:
+```bash
+npm install -g newman
+newman run postman/VibePlanner.postman_collection.json \
+  -e postman/VibePlanner.postman_environment.json

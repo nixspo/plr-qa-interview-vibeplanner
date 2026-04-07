@@ -1,0 +1,544 @@
+{
+  "info": {
+    "_postman_id": "90b44366-9109-41ef-bca3-cf0f82a63eae",
+    "name": "Bettermile",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4644942"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const json = pm.response.json();",
+              "pm.environment.set(\"token\", json.token);",
+              "",
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,pl;q=0.8,fr;q=0.7"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/login"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"test@vibeplanner.com\",\"password\":\"V1b3Pl@nn3r!\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/auth/login",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:3000/api/auth/login' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,pl;q=0.8,fr;q=0.7' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/login' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw $'{\"email\":\"test@vibeplanner.com\",\"password\":\"V1b3Pl@nn3r\\u0021\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "Add Tour",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,pl;q=0.8,fr;q=0.7"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/tours"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"tourNumber\":2137,\"maxVolume\":170,\"maxWeight\":999999,\"range\":300,\"vehicleType\":\"Cargo Bike\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tours",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tours"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:3000/api/tours' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,pl;q=0.8,fr;q=0.7' \\\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/tours' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"tourNumber\":2137,\"maxVolume\":170,\"maxWeight\":999999,\"range\":300,\"vehicleType\":\"Cargo Bike\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Tours",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,pl;q=0.8,fr;q=0.7"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/tours"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/tours",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tours"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:3000/api/tours' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,pl;q=0.8,fr;q=0.7' \\\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Referer: http://localhost:3000/tours' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "Add Area",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,pl;q=0.8,fr;q=0.7"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/tours/map"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"area\":{\"type\":\"Polygon\",\"coordinates\":[[[6.855469,51.027576],[7.075195,52.079506],[9.777832,50.722547],[9.755859,51.781436],[6.855469,51.027576]]]}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/tours/59/area",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "tours",
+            "59",
+            "area"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:3000/api/tours/8/area' \\\n  -X 'PATCH' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,pl;q=0.8,fr;q=0.7' \\\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/tours/map' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"area\":{\"type\":\"Polygon\",\"coordinates\":[[[6.855469,51.027576],[7.075195,52.079506],[9.777832,50.722547],[9.755859,51.781436],[6.855469,51.027576]]]}}'"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete tour",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,pl;q=0.8,fr;q=0.7"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/tours"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/tours/59",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tours",
+            "59"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:3000/api/tours/7' \\\n  -X 'DELETE' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,pl;q=0.8,fr;q=0.7' \\\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ2aWJlLXBsYW5uZXItdXNlcnMiLCJpc3MiOiJ2aWJlLXBsYW5uZXIiLCJlbWFpbCI6InRlc3RAdmliZXBsYW5uZXIuY29tIiwiZnVsbF9uYW1lIjoiVGVzdCBVc2VyIiwiZXhwIjoxNzc1MTU0NjgwfQ.IWfdvL2M8GrJmWIwlEGX_tmbW1JgwBWkkmrp75cM0cw' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/tours' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "baseURL",
+      "value": ""
+    },
+    {
+      "value": ""
+    }
+  ]
+}
